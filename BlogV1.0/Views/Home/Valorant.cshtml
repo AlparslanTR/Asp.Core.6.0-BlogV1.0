@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Valorant";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+<body>
+	<!-- HEADER -->
+		<div id="post-header" class="page-header">
+			<div class="page-header-bg" style="background-image: url('/BlogTema/img/kapak-2.jpg');" data-stellar-background-ratio="0.5"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>Son Zamanlar Dünyada Ses Getiren FPS Oyunu.</h1>
+						<ul class="post-meta">
+							<li>Alparslan Akbaş</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="section-row">					
+						<h3>Son Zamanlar Dünyada Ses Getiren FPS Oyunu.</h3>
+						<p>Riot Games tarafından geliştirilen ve Counter Strike: Global Offensive (CS:GO) ile Overwatch’a benzerliğiyle dikkat çeken Valorant’ı tamamen erişime açmasının ardından tüm dünya üzerinde online şekilde oynanmaya başlandı. Bu gelişmeler sonrası bazı kullanıcılar ise internet üzerinden Valorant nedir? Valorant nasıl oynanır? sorularının yanıtlarını bulmaya çalışıyor? Bu sorunun yanıtını haberimizde bulabilirsiniz. </p>
+					    <p>Her şeyden önce Valorant’ın nasıl bir oyun olduğunu anlatmak istiyorum. Aslında oyunu kabaca şu şekilde özetlemek mümkün: %90 Counter-Strike,%10Overwatch. Beşer kişilik iki takımın karşı karşıya geldiği maçlarda bir taraf savunma, diğer taraf saldırı rolünde. İki devrede toplam 25 tur üzerinden oynanan ve 13 tur kazananın zafere ulaştığı maçlar 30 saniyelik satın alma süreciyle başlıyor. Silah, zırh ve yetenek satın aldıktan sonra saldıran taraf “Spike” adı verilen cihazı hedef noktalara yerleştirmeye, savunan taraf buna engel olmaya çalışıyor. Maç formatı ve genel oyun mekanikleri açısından ağırlıklı olarak Counter-Strike’ın izinden giden oyuna Overwatch çeşnisi katan ise birbirinden farklı özelliklere sahip karakterler.</p>
+					    <img src="~/BlogTema/img/fade.jpg" class="img-thumbnail" />
+					    <h3>Valorant sistem gereksinimleri:</h3>
+						<ul style="list-style-type: square;">
+							<li>İşletim sistemi: Windows 7 / Windows 8 / Windows 10 64-bit</li>
+							<li>İşlemci: Intel Core 2 Duo E8400 (Intel), Athlon 200 GE (AMD)</li>
+							<li>Bellek: 4 GB RAM</li>
+							<li>Ekran kartı: Intel HD Graphics 4000 ya da AMD Radeon R5 200</li>
+							<li>Ekran kartı belleği: 1 GB VRAM</li>
+						</ul>
+						<br />
+						<p>Oyunun sistem gereksinimleri yeni nesil oyunlara göre ortalama durumda. Bu nedenle orta dereceli bir sistemli bilgisayarlardan bile oynanabilir gibi duruyor. Ancak yine de iyi performans ve grafikler için oyunun size önerdiği sisteme yakın bir bilgisayarda oynamanız gerek. </p>
+					</div>
+					<!-- /post content -->
+					@await Component.InvokeAsync("DetaySon3")
+					<!-- post comments -->
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+					<!-- category widget -->
+					@await Component.InvokeAsync("TabKategori")
+					<!-- /category widget -->
+					<!-- post widget -->
+					@await Component.InvokeAsync("PopulerBlog")
+					<!-- /post widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+

@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+<div class="row">
+						<div class="col-md-12">
+							<div class="section-title">
+								<h2 class="title">Son Eklenen Bloglar</h2>
+							</div>
+						</div>
+						@foreach (var x in Model)
+								{
+						<!-- post -->
+						<div class="col-md-6">
+							<div class="post">
+								
+									<a class="post-img" href="~/Blog/Detaylar/@x.BlogID"><img src="@x.BlogLittlePicture" alt="Blog Resmi"></a>
+									
+									<div class="post-body">
+									<div class="post-category">
+										<p style="color:deeppink">@x.category.CategoryName</p>
+									</div>
+									<h3 class="post-title"><a href="~/Blog/Detaylar/@x.BlogID">@x.BlogShort</a></h3>
+									<ul class="post-meta">
+										<li>@x.writer.WriterName</li>
+										<li>@(((DateTime)x.BlogDate).ToString("dd-MMMM-yyyy"))</li>
+									</ul>
+								</div>
+								
+								
+
+							</div>
+						</div>
+						<!-- /post -->
+						}
+
+						<div class="clearfix visible-md visible-lg"></div>
+
+						
+
+</div>

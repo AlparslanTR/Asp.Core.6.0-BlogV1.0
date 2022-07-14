@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "MarchOfEmpires";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+<body>
+	<!-- HEADER -->
+		<div id="post-header" class="page-header">
+			<div class="page-header-bg" style="background-image: url('/BlogTema/img/kapak-1.jpg');" data-stellar-background-ratio="0.5"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>Mobil Oyun Sektöründe Zirve Yapan Strateji Oyununu Tanıyalım.</h1>
+						<ul class="post-meta">
+							<li>Alparslan Akbaş</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="section-row">					
+						<h3>Mobil Oyun Sektöründe Zirve Yapan Strateji Oyununu Tanıyalım.</h3>
+						<p>Mobil strateji oyunlarının Steam'deki yüzü March of Empires, PC kanadında sistem gereksinimleri ve kolay oynanışı ile dikkat çekiyor. Gerçek oyuncular arasında kendi hükümdarlığınızı geliştirmeniz gereken oyun için bir inceleme gerçekleştirdik.</p>
+					    <p>Play Store’da 10 milyondan fazla indirmeye sahip March of Empires Sultanların Savaşı oyununun PC versiyonu Steam’de de popülerliğini koruyor. Mobil deneyimini bilgisayara taşımak isteyenler, bir de üstüne strateji oyunlarını sevenler için oyunu detaylı bir şekilde inceleyelim istedik. Özellikle düşük sistem istemesi oyunu daha da çekici hale getiriyor.</p>
+					    <p>March of Empires hile kullanımı açısından da oyunculara güven veren bir oyun. Oyunda hile bulmak neredeyse imkansız. Oyunda kalenizi güçlendirip, kendinize güçlü ordular yaratmanız gerekiyor. Ardından da bölgede hakimiyet kurmak için seferlere başlıyorsunuz. Oyunun temel amacını da açıkladığımıza göre; gelin şimdi daha detaylı bir şekilde March of Empires içerisinde neler var, beraber bakalım.</p>
+					    <h3>March of Empires sistem gereksinimleri:</h3>
+						<img src="~/BlogTema/img/march1.jpeg" class="img-thumbnail" />
+						<ul style="list-style-type: square;">
+							<li>İşletim Sistemi: Windows 10 </li>
+							<li>İşlemci: Intel Core i5 veya AMD Equivalent  </li>
+							<li>Bellek: 4 GB RAM  </li>
+							<li>Ekran Kartı: NVIDIA Geforce GTX 730 </li>
+							<li>DirectX: Sürüm 11  </li>
+							<li>Ağ: Genişbant İnternet bağlantısı  </li>
+							<li>Depolama: 2 GB kullanılabilir alan </li>
+							<li>Ses Kartı: DirectX Compatible </li>
+						</ul>
+						<br />
+						<p>Oyunun sistem gereksinimleri yeni nesil oyunlara bir hayli düşük. Bu nedenle “tost makinesi” olarak tabir ettiğimiz düşük sistemli bilgisayarlardan bile oynanabilir gibi duruyor. Ancak yine de iyi performans ve grafikler için oyunun size önerdiği sisteme yakın bir bilgisayarda oynamanız gerek. </p>
+					</div>
+					<!-- /post content -->
+					@await Component.InvokeAsync("DetaySon3")
+					<!-- post comments -->
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+					<!-- category widget -->
+					@await Component.InvokeAsync("TabKategori")
+					<!-- /category widget -->
+					<!-- post widget -->
+					@await Component.InvokeAsync("PopulerBlog")
+					<!-- /post widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+

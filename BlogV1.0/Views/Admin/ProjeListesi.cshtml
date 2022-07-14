@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<Proje>
+@{
+    ViewData["Title"] = "ProjeListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Proje Tablosu</h5>
+			  <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Başlık</th>
+                    <th scope="col">Tarih</th>                  
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                    <th scope="col">Detaylar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach(var y in Model){
+                  <tr>
+                    <td>@y.ProjeID</td>
+                    <td>@y.ProjeTitle</td>
+                    <td>@y.ProjeDate</td>                  
+                    <td><a href="~/Admin/ProjeGuncelle/@y.ProjeID" class="btn btn-outline-success btn-fw btn-icon-text">Güncelle <i class="zmdi zmdi-arrow-right"></i></a></td>
+                    <td><a href="~/Admin/ProjeSil/@y.ProjeID" class="btn btn-outline-warning btn-fw btn-icon-text">Sil <i class="zmdi zmdi-arrow-right"></i></a></td>
+                    <td><a href="~/Proje/Detaylar/@y.ProjeID" class="btn btn-outline-info btn-fw btn-icon-text">Detaylar <i class="zmdi zmdi-arrow-right"></i></a></td> 
+                  </tr>
+                }</tbody>
+              </table>
+            </div>
+            <a href="~/Admin/ProjeEkle" class="btn btn-outline-dark btn-fw btn-icon-text">Proje Ekle</a>
+            </div>
+            @Html.PagedListPager((IPagedList)Model,page =>Url.Action("ProjeListesi", new {page}),new X.PagedList.Web.Common.PagedListRenderOptions{
+                  LiElementClasses=new string[] {"page-item"},
+                  PageClasses=new string []{"page-link"}
+              })
+          </div>
+        </div>
+      </div>
+

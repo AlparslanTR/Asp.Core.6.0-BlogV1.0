@@ -1,0 +1,92 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewData["Title"] = "Iletişim";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	<!-- HEADER -->
+	<header id="header">
+		<div class="page-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-offset-1 col-md-10 text-center">
+						<h1 class="text-uppercase">İLETİŞİM</h1>
+						<p class="lead">Önerileriniz Veya Şikayetleriniz İçin Lütfen Bizimle İletişime Geçmekten Çekinmeyin.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- /HEADER -->
+
+	<!-- SECTION -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="section-row">
+						<div class="section-title">
+							<h2 class="title">İletişim Bilgileri</h2>
+						</div>
+						<p>Kurumsal Mail Üzerinden Benimle Direk İletişime Geçebilirsiniz.</p>
+						<ul class="contact">
+							<li><i class="fa fa-phone"></i>+90 545-293-2911</li>
+							<li><i class="fa fa-envelope"></i> <a href="#">bybluestht@gmail.com</a></li>
+							<li><i class="fa fa-map-marker"></i>2258 1st Ave, San Diego, CA 92101, Amerika Birleşik Devletleri </li>
+						</ul>
+					</div>
+			   <div class="section-row">
+						<div class="section-title">
+							<h2 class="title">Mail Ulaş</h2>
+						</div>
+						<form asp-action="Iletişim" asp-controller="Home" method="post">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input class="input" type="text" asp-for="ContactName" placeholder="Ad Soyad" required="">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input class="input" type="email" asp-for="ContactMail" placeholder="Mail"required="">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<input class="input" type="text" asp-for="ContactSubject" placeholder="Konu"required="">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<textarea class="input" asp-for="ContactMessage" placeholder="Mesajınız"required=""></textarea>
+									</div>
+									<button class="primary-button">Gönder</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+				@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+
+					<!-- newsletter widget -->
+				@await Component.InvokeAsync("AboneSagTab")
+					<!-- /newsletter widget -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+</body>
+
+</html>
+
+

@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.Proje
+@{
+    ViewData["Title"] = "ProjeGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">Proje Güncelle</div>
+            <hr>
+            <form asp-action="ProjeGuncelle" asp-controller="Admin" method="post">
+                <div class="form-group">
+                    <input hidden="hidden" type="text" asp-for="ProjeID" />
+                    <label asp-for="ProjeTitle">Proje Başlığı</label>
+                    <input type="text" class="form-control form-control-rounded" id="input-6" asp-for="ProjeTitle" required="">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjeShort">Proje Detayı İçin 1 Cümle Yazınız</label>
+                    <input type="text" class="form-control form-control-rounded" id="input-7" asp-for="ProjeShort" required="">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjeLittlePicture">Proje Ufak Resim İçin URL Giriniz</label>
+                    <input type="url" class="form-control form-control-rounded" id="input-8" asp-for="ProjeLittlePicture" required="">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjePicture">Proje Büyük Resim İçin URL Giriniz</label>
+                    <input type="url" class="form-control form-control-rounded" id="input-9" asp-for="ProjePicture" required="">
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProjeContent">Projenizin İçeriğini Giriniz</label>
+                    <textarea asp-for="ProjeContent" id="summernote" class="form-control form-control-rounded"></textarea>
+                </div>
+                <button type="submit" class="btn btn-light btn-round px-5"> Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script>
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 400,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
+
+

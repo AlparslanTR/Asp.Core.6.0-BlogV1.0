@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Proje>
+@{
+    ViewData["Title"] = "Detaylar";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+<body>
+	<!-- HEADER -->
+		<div id="post-header" class="page-header">
+			@foreach(var x in Model){
+			<div class="page-header-bg" style="background-image: url('@x.ProjePicture');" data-stellar-background-ratio="0.5"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>@x.ProjeShort</h1>
+						<ul class="post-meta">
+							<li>@x.writer.WriterName</li>
+							<li>@x.ProjeDate</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		}</div>
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					@foreach(var x in Model){
+					<div class="section-row">					
+						<h3>@x.ProjeShort</h3>
+						<p>@x.ProjeContent</p>
+					</div>}
+					<!-- /post content -->
+					@await Component.InvokeAsync("DetaySon3")  
+					<!-- post comments -->
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+					<!-- category widget -->
+					@await Component.InvokeAsync("TabKategori")
+					<!-- /category widget -->
+					<!-- post widget -->
+					@await Component.InvokeAsync("PopulerBlog")  
+					<!-- /post widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+

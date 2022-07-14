@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Gibi";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+<body>
+	<!-- HEADER -->
+		<div id="post-header" class="page-header">
+			<div class="page-header-bg" style="background-image: url('/BlogTema/img/gibi3.jpg');" data-stellar-background-ratio="0.5"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<h1>Dizi Sektörünün İçinden Geçen Ünlü Oyuncu Feyyaz Yiğit'in Oynadığı Gibi.</h1>
+						<ul class="post-meta">
+							<li>Alparslan Akbaş</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="section-row">					
+						<h3>Dizi Sektörünün İçinden Geçen Ünlü Oyuncu Feyyaz Yiğit'in Oynadığı Gibi.</h3>
+						<p>Gibi, Exxen'de yayınlanan komedi türündeki Türk yapımı internet dizisidir. Dizinin ilk bölümü 1 Ocak 2021 tarihinde yayınlanmıştır. Başrollerinde Feyyaz Yiğit ve Kıvanç Kılınç yer almaktadır. İkinci sezonda ana kadroya Ahmet Kürşat Öçalan da dahil olmuştur.</p>
+					    <h3>Konusu</h3>
+						<p>Gibi dizisi kısa skeçlerden oluşmaktadır. Özellikle iki ismin ön plana çıktığı bu dizide en birinci hedef olarak izleyeni güldürmek hedeflendi. Aynı zamanda skeçlerde yer alan oyuncular da dikkat çekiyor. Feyyaz Yiğit ve Kıvanç Kılınç, Gibi dizisinde öne çıkan iki isim olmaktadır.</p>
+						<p>Yılmaz ve İlkkan, sürekli olarak birbiriyle didişmekte olan iki arkadaştır. Arkadaşlıklarının en önemli özelliği ise sıradan hayatlarını altüst edecek bir şeyler yapmayı her zaman becermektir. Küçücük olayları inanılmaz bir ustalıkla büyütür, işleri saç baş yolduracak seviyeye getirirler.</p>
+						<p>Gibi Dizisinin Yılmaz’ı Feyyaz Yiğit, İlkkan`ı Kıvanç Kılınç, Ersoy’u Ahmet Kürşat Öçalan canlandırmaktadır.
+
+Senaryosunu ise Aziz Kedi ve Feyyaz Yiğit birlikte yazmaktadılar.</p>
+						<img src="~/BlogTema/img/Gibi_afiş.jpg" class="img-thumbnail" />										
+					</div>
+					<!-- /post content -->
+					@await Component.InvokeAsync("DetaySon3")
+					<!-- post comments -->
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+					<!-- category widget -->
+					@await Component.InvokeAsync("TabKategori")
+					<!-- /category widget -->
+					<!-- post widget -->
+					@await Component.InvokeAsync("PopulerBlog")
+					<!-- /post widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+

@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Concrete
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<Proje>
+@{
+    ViewData["Title"] = "Projeler";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+
+<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-title">
+								<h2 class="title">Projeler</h2>
+							</div>
+						</div>
+						@foreach(var x in Model){
+						<!-- post -->
+						<div class="col-md-4">
+							<div class="post post-sm">
+								<a class="post-img" href="~/Proje/Detaylar/@x.ProjeID"><img src="@x.ProjeLittlePicture" alt=""></a>
+								<div class="post-body">		
+									<h3 class="post-title title-sm">@x.ProjeTitle</h3>
+									<h3 class="post-title title-sm"><a href="~/Proje/Detaylar/@x.ProjeID">@x.ProjeShort</a></h3>
+									<ul class="post-meta">
+										<li>@x.writer.WriterName</li>
+										<li>@x.ProjeDate</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					}</div>
+					@Html.PagedListPager((IPagedList)Model,page =>Url.Action("Projeler", new {page}),new X.PagedList.Web.Common.PagedListRenderOptions{
+                  LiElementClasses=new string[] {"page-item"},
+                  PageClasses=new string []{"page-link"}
+              })
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+					<!-- post widget -->
+					@await Component.InvokeAsync("PopulerBlog")
+					<!-- /post widget -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+

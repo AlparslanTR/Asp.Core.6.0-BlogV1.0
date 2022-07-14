@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Anasayfa";
+    Layout = "~/Views/Shared/_BlogsLayout.cshtml";
+}
+<div class="section">
+		<!-- container -->
+		<div class="container">
+			@await Component.InvokeAsync("Son3Proje") @*Web Yazılarım*@
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<!-- row -->
+					@await Component.InvokeAsync("Son4Blog")
+					<!-- /row -->
+
+					<!-- row -->
+					@await Component.InvokeAsync("Yazılım3Listele")
+					<!-- /row -->
+
+					<!-- row -->
+					@await Component.InvokeAsync("DiziListele3")
+					<!-- /row -->
+
+					<!-- row -->
+					@await Component.InvokeAsync("OyunListele3")
+					<!-- /row -->
+				</div>
+				<div class="col-md-4">
+					<!-- social widget -->
+					@await Component.InvokeAsync("SosyalSagTab")
+					<!-- /social widget -->
+
+					<!-- category widget -->
+					@await Component.InvokeAsync("TabKategori")
+					<!-- /category widget -->
+					<!-- post widget -->
+				    @await Component.InvokeAsync("PopulerBlog")
+					<!-- /post widget -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>

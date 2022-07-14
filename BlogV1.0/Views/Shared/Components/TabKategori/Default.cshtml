@@ -1,0 +1,12 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+<div class="aside-widget">
+						<div class="section-title">
+							<h2 class="title">Kategoriler</h2>
+						</div>
+						<div class="category-widget">
+							@foreach(var x in Model){
+							<ul>
+								<li><a href="~/Blog/@x.CategoryName">@x.CategoryName<span>@x.blogs.Count()</span></a></li>
+							</ul>
+						}</div>
+					</div>
